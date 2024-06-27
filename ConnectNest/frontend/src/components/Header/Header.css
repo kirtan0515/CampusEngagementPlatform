@@ -1,0 +1,28 @@
+.header {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .header nav a, .header nav button {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .header nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .header nav a:hover, .header nav button:hover {
+    text-decoration: underline;
+  }
+  

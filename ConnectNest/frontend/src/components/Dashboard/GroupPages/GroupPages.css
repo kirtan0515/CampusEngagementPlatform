@@ -1,0 +1,15 @@
+.group-pages-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.group-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.group-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}

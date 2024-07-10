@@ -1,33 +1,246 @@
-body, html {
-  margin: 0;
+/* src/components/LandingPage/LandingPage.css */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.main-container {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+.blur-circle1 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, white, pink);
+  border-radius: 50%;
+  filter: blur(120px);
+  position: absolute;
+  left: 10%;
+  top: 20%;
+}
+
+.blur-circle2 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, white, pink);
+  border-radius: 50%;
+  filter: blur(100px);
+  position: absolute;
+  right: 10%;
+  top: 20%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: black; /* Set the background color to black */
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: 'Arial, sans-serif';
+  margin: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Global Rules */
+
+/* Start Landing Page */
+.landing-page header {
+  min-height: 80px;
+  display: flex;
+  background-color: #1a3a58; /* Set the correct background color */
+}
+
+@media (max-width: 767px) {
+  .landing-page header {
+    min-height: auto;
+    display: initial;
+  }
+}
+
+.landing-page header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .landing-page header .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.landing-page header .logo {
+  color: #5d5d5d;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.landing-logo {
+  height: 50px;
+}
+
+@media (max-width: 767px) {
+  .landing-page header .logo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.landing-page header .links {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .landing-page header .links {
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+.landing-page header .links li {
+  margin-left: 30px;
+  color: #5d5d5d;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+@media (max-width: 767px) {
+  .landing-page header .links li {
+    margin-left: auto;
+  }
+}
+
+.landing-page header .links li:last-child {
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #6c63ff;
+}
+
+.landing-page header .links li:not(:last-child):hover {
+  color: #6c63ff;
+}
+
+.landing-page .content .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 140px;
+  min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 767px) {
+  .landing-page .content .container {
+    gap: 0;
+    min-height: calc(100vh - 101px);
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing-page .content .info {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+.landing-page .content .info h1 {
+  color: #bbbbbb;
+  font-size: 44px;
+}
+
+.landing-page .content .info p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #b3b3b3;
+}
+
+.landing-page .content .info button {
+  border: 0;
+  border-radius: 20px;
+  padding: 12px 30px;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #6c63ff;
+}
+
+.landing-page .content .image img {
+  max-width: 100%;
+}
+
+/* End Landing Page */
+
+.main-image {
+  width: 600px;
+  height: 400px;
+}
+
+h1,
+p {
+  color: white;
 }
 
 .landing-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  color: #fff;
-  text-align: center;
   padding: 20px;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
 .landing-header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  background-color: #1a3a58; /* Set the correct background color */
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .landing-logo {
@@ -36,49 +249,44 @@ body, html {
 
 .landing-nav {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 
 .nav-button {
-  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: 2px solid #fff;
+  color: #007bff;
+  padding: 10px 15px;
   border-radius: 5px;
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .nav-button:hover {
-  background: #fff;
-  color: #2a5298;
+  background-color: #e9ecef;
 }
 
 .landing-main {
-  max-width: 800px;
-  margin-top: 50px;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .landing-title {
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
 .landing-subtitle {
   font-size: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .landing-features {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 40px;
+  text-align: left;
+  margin: 20px 0;
 }
 
 .features-title {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .features-list {
@@ -88,22 +296,42 @@ body, html {
 
 .features-list li {
   font-size: 18px;
-  margin: 10px 0;
+  margin: 5px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.features-list li:before {
+  content: '•';
+  color: #007bff;
+  position: absolute;
+  left: 0;
 }
 
 .cta-button {
-  font-size: 20px;
-  color: #2a5298;
-  background: #fff;
+  display: inline-block;
+  margin-top: 20px;
   padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #007bff;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-  background: #2a5298;
-  color: #fff;
+  background-color: #0056b3;
+}
+
+.cta-link {
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #1a3a58; /* Set to the correct background color */
+  color: white;
+  text-align: center;
+  padding: 10px;
 }

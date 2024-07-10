@@ -1,41 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
-import logo from './logo.png';
+import logo from './logo.png'; // Make sure this path is correct
 
-function LandingPage() {
+const LandingPage = () => {
   return (
-    <div className="landing-container">
-      <header className="landing-header">
-        <img src={logo} alt="ConnectNest Logo" className="landing-logo" />
-        <nav className="landing-nav">
-          <Link to="/login" className="nav-button">Login</Link>
-          <Link to="/signup" className="nav-button">Sign Up</Link>
-          <Link to="/help" className="nav-button">Help</Link>
-          <Link to="/faqs" className="nav-button">FAQs</Link>
-        </nav>
-      </header>
-      
-      <main className="landing-main">
-        <h1 className="landing-title">Always Ready to Connect You</h1>
-        <p className="landing-subtitle">Your Campus Engagement Platform</p>
+    <div className="main-container">
+      <div className="blur-circle1"></div>
+      <div className="blur-circle2"></div>
 
-        <section className="landing-features">
-          <h2 className="features-title">Features</h2>
-          <ul className="features-list">
-            <li>Group Pages: Dedicated pages for each student organization.</li>
-            <li>Event Calendars: Integrated event calendars to keep track of all activities.</li>
-            <li>File Sharing: Share important documents and resources easily.</li>
-            <li>Push Notifications: Get real-time updates about events and announcements.</li>
-            <li>Personalized Recommendations: Machine learning-powered suggestions for events and groups.</li>
-            <li>Secure Access: Robust authentication and authorization with 2FA.</li>
-          </ul>
-        </section>
-
-        <Link to="/signup" className="cta-button">Get Started</Link>
-      </main>
+      <div className="landing-page">
+        <header>
+          <div className="container">
+            <img src={logo} alt="ConnectNest Logo" className="landing-logo" />
+            <ul className="links">
+              <li><Link to="/login" className="nav-button">Login</Link></li>
+              <li><Link to="/signup" className="nav-button">Sign Up</Link></li>
+              <li><Link to="/help" className="nav-button">Help</Link></li>
+              <li><Link to="/faqs" className="nav-button">FAQs</Link></li>
+            </ul>
+          </div>
+        </header>
+        <div className="content">
+          <div className="container">
+            <div className="info">
+              <h1>Looking For Inspiration</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
+              <button className="cta-button"><Link to="/signup" className="cta-link">Get Started</Link></button>
+            </div>
+            <div className="image">
+              <img className="main-image" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-working-using-vr-tech-3840669-3202986.png?f=webp" alt="VR Tech" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default LandingPage;

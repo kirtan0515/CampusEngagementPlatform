@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import GroupPages from './GroupPages/GroupPages';
-import EventCalendar from './EventCalendar/EventCalendar';
-import FileSharing from './FileSharing/FileSharing';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -34,20 +31,14 @@ function Dashboard() {
         <h2>{greeting}, {fullName}!</h2>
         <button onClick={handleLogout} className="logout-button">Logout</button>
       </header>
-      <div className="dashboard-content">
-        <section className="group-pages">
-          <h3>Group Pages</h3>
-          <GroupPages />
-        </section>
-        <section className="event-calendar">
-          <h3>Event Calendar</h3>
-          <EventCalendar />
-        </section>
-        <section className="file-sharing">
-          <h3>File Sharing</h3>
-          <FileSharing />
-        </section>
-      </div>
+      <nav className="dashboard-nav">
+        <ul>
+          <li><a href="/group-pages">Group Pages</a></li>
+          <li><a href="/event-calendar">Event Calendar</a></li>
+          <li><a href="/file-sharing">File Sharing</a></li>
+          <li><a href="/post-something">Post Something</a></li>
+        </ul>
+      </nav>
     </div>
   );
 }

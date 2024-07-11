@@ -31,20 +31,19 @@ function App() {
     <Router>
       <div>
         <header>
-          ConnectNest - Campus Engagement Platform
+          <Routes>
+            <Route exact path="/" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/dashboard" element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/engagements" element={<Engagements engagements={engagements} />} />
+            {/* Add other routes here */}
+          </Routes>
         </header>
-        <Routes>
-          <Route exact path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          } />
-          <Route path="/engagements" element={<Engagements engagements={engagements} />} />
-          {/* Add other routes here */}
-        </Routes>
         <footer>
           &copy; {new Date().getFullYear()} ConnectNest
         </footer>

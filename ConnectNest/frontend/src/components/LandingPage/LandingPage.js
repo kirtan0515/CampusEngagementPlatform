@@ -24,8 +24,8 @@ const LandingPage = () => {
         <div className="content">
           <div className="container">
             <div className="info">
-              <h1>Looking For Inspiration</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
+              <h1>Unite. Engage. Inspire.</h1>
+              <p>Discover a new way to stay connected and engaged with your campus commounity. Wheather you're a student, faculty, or staff, ConnectNest is here to bring everyone together.</p>
               <button className="cta-button"><Link to="/signup" className="cta-link">Get Started</Link></button>
             </div>
             <div className="image">

@@ -7,10 +7,13 @@ import LoginPage from './components/LoginPage/LoginPage';
 import SignUpPage from './components/SignUpPage/SignUpPage';
 import Dashboard from './components/Dashboard/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import Header from './components/Header/Header'; // Import Header component
+import Footer from './components/Footer/Footer'; // Import Footer component
 import './App.css';
 
 function App() {
   const [engagements, setEngagements] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,10 +30,15 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    setIsAuthenticated(!!localStorage.getItem('token'));
+  }, [localStorage.getItem('token')]);
+
   return (
     <Router>
       <div>
-        <header>
+        <Header isAuthenticated={isAuthenticated} /> {/* Pass isAuthenticated prop */}
+        <div className="main-content">
           <Routes>
             <Route exact path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -43,10 +51,8 @@ function App() {
             <Route path="/engagements" element={<Engagements engagements={engagements} />} />
             {/* Add other routes here */}
           </Routes>
-        </header>
-        <footer>
-          &copy; {new Date().getFullYear()} ConnectNest
-        </footer>
+        </div>
+        <Footer />
       </div>
     </Router>
   );

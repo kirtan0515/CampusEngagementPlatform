@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 import logo from './logo.png';
 
-function Header() {
+function Header({ isAuthenticated }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -23,7 +23,14 @@ function Header() {
           <Link to="/engagements">Engagements</Link>
           <Link to="/help">Help</Link>
           <Link to="/faqs">FAQs</Link>
-          <button onClick={handleLogout} className="logout-button">Logout</button>
+          {isAuthenticated ? (
+            <button onClick={handleLogout} className="logout-button">Logout</button>
+          ) : (
+            <>
+              <Link to="/login" className="nav-button">Login</Link>
+              <Link to="/signup" className="nav-button">Sign Up</Link>
+            </>
+          )}
         </nav>
       </div>
     </header>

@@ -39,3 +39,9 @@ footer {
   width: 100%;
   bottom: 0;
 }
+
+/* App.css */
+.main-content {
+  padding-top: 50px; /* Adjust based on your header height */
+  padding-bottom: 30px; /* Adjust based on your footer height */
+}

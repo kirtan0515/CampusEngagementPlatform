@@ -1,28 +1,66 @@
+/* Header.css */
 .header {
-    padding: 10px;
-    background-color: #333;
-    color: white;
+  width: 100%;
+  background-color: #1a3a58; /* Match your header background color */
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.logout-button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  background-color: #ff4500;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
   }
-  
-  .header nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  .nav {
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  .header nav a, .header nav button {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  .header nav button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .header nav a:hover, .header nav button:hover {
-    text-decoration: underline;
-  }
-  
+}

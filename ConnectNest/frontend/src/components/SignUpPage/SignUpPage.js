@@ -42,49 +42,48 @@ function SignUpPage() {
   };
 
   return (
-    <div className="signup-container">
-      <h2>Sign Up for ConnectNest</h2>
-      <form onSubmit={handleSignUp}>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-        {successMessage && <p className="success-message">{successMessage}</p>}
-        <div className="form-group">
-          <label>Name:</label>
+    <div className="main">
+      <div className="container a-container">
+        <form className="form" onSubmit={handleSignUp}>
+          <h2 className="form_title title">Create Account</h2>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          {successMessage && <p className="success-message">{successMessage}</p>}
+          <span className="form__span">or use email for registration</span>
           <input
+            className="form__input"
             type="text"
+            placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
-          <label>Email:</label>
           <input
+            className="form__input"
             type="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
-          <label>Password:</label>
           <input
+            className="form__input"
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </div>
-        <div className="form-group">
-          <label>Confirm Password:</label>
           <input
+            className="form__input"
             type="password"
+            placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
-        </div>
-        <button type="submit" className="form-button">Sign Up</button>
-      </form>
+          <button className="form__button button submit">SIGN UP</button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@
   width: 100%;
   background-color: #1a3a58;
   color: white;
-  padding: 5px 0; /* Smaller padding */
+  padding: 10px 0; /* Adjust padding for size */
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -23,7 +23,7 @@
 }
 
 .logo {
-  height: 30px; /* Smaller logo */
+  height: 30px; /* Adjusted for smaller size */
   margin-right: 10px;
 }
 

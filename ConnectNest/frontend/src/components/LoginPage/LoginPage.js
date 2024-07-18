@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'; // Add Link here
+import { useNavigate, Link } from 'react-router-dom';
 import './LoginPage.css';
 import logo from './logo.png'; // Ensure you have the logo image
 
@@ -52,7 +52,7 @@ function LoginPage() {
         <div className="form-group">
           <input
             type="email"
-            placeholder="Username"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required

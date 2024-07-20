@@ -43,9 +43,6 @@ function LoginPage() {
 
   return (
     <div className="login-container">
-      <header className="login-header">
-        <img src={logo} alt="ConnectNest Logo" className="login-logo" />
-      </header>
       <form className="login-form" onSubmit={handleLogin}>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         {successMessage && <p className="success-message">{successMessage}</p>}

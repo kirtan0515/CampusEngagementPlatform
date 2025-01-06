@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './LoginPage.css';
+import './LoginPage.css';  // Updated CSS with Neumorphism
 import logo from './logo.png';
 
 function LoginPage() {
@@ -42,17 +42,16 @@ function LoginPage() {
   };
 
   return (
-    <>
-      <header>
-        <img src={logo} alt="ConnectNest Logo" className="login-logo" />
-      </header>
-
-      <div className="login-container">
-        <form className="login-form" onSubmit={handleLogin}>
+    <div className="main">
+      <div className="container b-container">
+        <form className="form" onSubmit={handleLogin}>
+          <img src={logo} alt="ConnectNest Logo" className="login-logo" />
+          <h2 className="form_title title">Sign in to ConnectNest</h2>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
           {successMessage && <p className="success-message">{successMessage}</p>}
-          <div className="form-group">
+          <div className="form__input-container">
             <input
+              className="form__input"
               type="email"
               placeholder="Email"
               value={email}
@@ -60,8 +59,9 @@ function LoginPage() {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form__input-container">
             <input
+              className="form__input"
               type="password"
               placeholder="Password"
               value={password}
@@ -69,18 +69,14 @@ function LoginPage() {
               required
             />
           </div>
-          <button type="submit" className="form-button">Get Started</button>
+          <button type="submit" className="form__button button">Get Started</button>
+          <div className="form__links">
+            <Link className="form__link" to="/signup">Create Account</Link>
+            <Link className="form__link" to="/help">Need Help?</Link>
+          </div>
         </form>
-        <div className="login-footer">
-          <Link to="/signup">Create Account</Link>
-          <Link to="/help">Need Help?</Link>
-        </div>
       </div>
-
-      <footer>
-        <p>© 2024 ConnectNest</p>
-      </footer>
-    </>
+    </div>
   );
 }
 

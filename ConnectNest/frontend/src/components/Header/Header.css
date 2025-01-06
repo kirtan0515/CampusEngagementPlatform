@@ -1,12 +1,13 @@
-/* Header.css */
+/* Header Styles */
 .header {
   width: 100%;
   background-color: #1a3a58;
   color: white;
-  padding: 10px 0; /* Adjust padding for size */
+  padding: 10px 0;
   position: fixed;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for better separation */
 }
 
 .container {
@@ -23,44 +24,61 @@
 }
 
 .logo {
-  height: 30px; /* Adjusted for smaller size */
-  margin-right: 10px;
+  height: 40px; /* Slightly larger for better visibility */
+  margin-right: 15px;
 }
 
 .nav {
   display: flex;
-  gap: 15px;
+  gap: 20px; /* Increase gap for better spacing */
 }
 
 .nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  padding: 5px 15px; /* Add padding for better click area */
+  border-radius: 5px; /* Rounded corners for a smoother look */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .nav a:hover {
-  text-decoration: underline;
+  background-color: #2a506f; /* Subtle dark blue background on hover */
+  text-decoration: none; /* Remove underline on hover */
 }
 
+/* Buttons in the Header */
 .logout-button, .nav-button {
   background-color: #ff6347;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 8px 16px; /* Increase padding for better size */
   cursor: pointer;
   font-weight: bold;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .logout-button:hover, .nav-button:hover {
-  background-color: #ff4500;
+  background-color: #ff4500; /* Slightly darker red on hover */
 }
 
+/* Mobile Responsive Styles */
 @media (max-width: 767px) {
   .container {
     flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
   }
+
   .nav {
-    flex-direction: column;
+    flex-direction: column; /* Stack links vertically */
     gap: 10px;
+    width: 100%; /* Full-width links for mobile */
+  }
+
+  .nav a {
+    width: 100%; /* Full clickable width */
+    text-align: left;
+    padding: 10px 20px; /* Adjust padding for mobile */
   }
 }

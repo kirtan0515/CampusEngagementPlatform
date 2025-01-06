@@ -1,158 +1,96 @@
-/* LoginPage.css */
-body {
+/* Reset Styles Scoped to Login Page */
+.login-page * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  background-color: #ecf0f3;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
-/* Adjust spacing between header and form */
-.login-container {
+/* Main Login Container */
+.login-page .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
-  width: 100%;
-  padding-top: 120px; /* Increased padding to push content below the header */
+  height: 100vh;
+  background-color: #f0f4f8;
 }
 
-header {
-  width: 100%;
-  background-color: #003366;
-  color: white;
-  padding: 10px 0;
-  text-align: left; /* Align logo and menu items properly */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between; /* Space between logo and nav */
-  align-items: center; /* Vertically center logo and links */
-  padding-left: 20px; /* Ensure some space on the left */
-  padding-right: 20px; /* Ensure space on the right */
-}
-
-/* Logo styling */
-.login-logo {
-  width: 150px;
-  height: auto;
-  object-fit: contain;
-  margin-right: 20px; /* Add margin to avoid overlap with nav links */
-}
-
-/* Footer */
-footer {
-  background-color: #003366;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
-
-/* Login form styling */
-.login-form {
+/* Login Form Styling */
+.login-page .form {
   width: 400px;
   padding: 40px;
   background-color: #ecf0f3;
-  box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px #ffffff;
 }
 
-/* Form group and inputs */
-.form-group {
+.login-page .form input {
   width: 100%;
+  padding: 15px;
   margin-bottom: 20px;
-}
-
-.form-group input {
-  width: 100%;
-  height: 40px;
-  margin: 4px 0;
-  padding-left: 25px;
-  font-size: 13px;
-  letter-spacing: 0.15px;
   border: none;
-  outline: none;
-  font-family: "Montserrat", sans-serif;
+  border-radius: 12px;
   background-color: #ecf0f3;
-  transition: 0.25s ease;
-  border-radius: 8px;
-  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
-}
-
-.form-group input:focus {
-  box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
-}
-
-/* Button styling */
-.form-button {
-  width: 180px;
-  height: 50px;
-  border-radius: 25px;
-  margin-top: 20px;
-  font-weight: 700;
+  box-shadow: inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff;
   font-size: 14px;
-  letter-spacing: 1.15px;
-  background-color: #4B70E2;
-  color: #f9f9f9;
-  box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #f9f9f9;
+}
+
+.login-page .form input:focus {
+  box-shadow: inset 2px 2px 5px #d1d9e6, inset -2px -2px 5px #ffffff;
+}
+
+.login-page .form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #6c63ff;
+  color: white;
   border: none;
-  outline: none;
+  border-radius: 12px;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px #ffffff;
   cursor: pointer;
-}
-
-.form-button:hover {
-  box-shadow: 6px 6px 10px #d1d9e6, -6px -6px 10px #f9f9f9;
-  transform: scale(0.985);
-  transition: 0.25s;
-}
-
-.form-button:active,
-.form-button:focus {
-  box-shadow: 2px 2px 6px #d1d9e6, -2px -2px 6px #f9f9f9;
-  transform: scale(0.97);
-  transition: 0.25s;
-}
-
-/* Messages */
-.error-message, .success-message {
-  margin-bottom: 20px;
-  color: #d9534f;
   font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+.login-page .form button:hover {
+  transform: translateY(-2px);
+}
+
+.login-page .form button:active {
+  transform: translateY(0);
+  box-shadow: inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff;
+}
+
+/* Error and success messages */
+.login-page .error-message,
+.login-page .success-message {
+  font-size: 14px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.success-message {
+.login-page .error-message {
+  color: #d9534f;
+}
+
+.login-page .success-message {
   color: #5cb85c;
 }
 
 /* Footer links */
-.login-footer {
+.login-page .login-footer {
   margin-top: 20px;
   text-align: center;
 }
 
-.login-footer a {
-  margin: 0 10px;
-  color: #4B70E2;
+.login-page .login-footer a {
+  color: #6c63ff;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: bold;
+  margin: 0 10px;
 }
 
-.login-footer a:hover {
+.login-page .login-footer a:hover {
   text-decoration: underline;
 }
-
-

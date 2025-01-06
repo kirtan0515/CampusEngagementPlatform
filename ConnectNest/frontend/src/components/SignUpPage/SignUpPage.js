@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SignUpPage.css';
+import './SignUpPage.css'; // Make sure you link the updated Neumorphism CSS
 
 function SignUpPage() {
   const [name, setName] = useState('');
@@ -44,58 +44,51 @@ function SignUpPage() {
   return (
     <div className="sign-up-page">
       <div className="main">
-        <div className="container b-container">
-          <div className="switch">
-            <div className="switch__container">
-              <h2 className="switch__title">Welcome Back!</h2>
-              <p className="switch__description">To keep connected with us please login with your personal info</p>
-              <button className="switch__button">SIGN IN</button>
-            </div>
-          </div>
-        </div>
         <div className="container a-container">
           <form className="form" onSubmit={handleSignUp}>
             <h2 className="form_title title">Create Account</h2>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {successMessage && <p className="success-message">{successMessage}</p>}
-            <div className="form__icons">
-              <img className="form__icon" src="google-icon.svg" alt="Google" />
-              <img className="form__icon" src="outlook-icon.svg" alt="Outlook" />
-              <img className="form__icon" src="linkedin-icon.svg" alt="LinkedIn" />
+            <div className="form__input-container">
+              <input
+                className="form__input"
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
             </div>
-            <span className="form__span">or use email for registration</span>
-            <input
-              className="form__input"
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-            <input
-              className="form__input"
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              className="form__input"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <input
-              className="form__input"
-              type="password"
-              placeholder="Confirm Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
+            <div className="form__input-container">
+              <input
+                className="form__input"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form__input-container">
+              <input
+                className="form__input"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form__input-container">
+              <input
+                className="form__input"
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
             <button className="form__button button submit">SIGN UP</button>
           </form>
         </div>
